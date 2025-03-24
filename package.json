@@ -20,6 +20,7 @@
     "@react-router/fs-routes": "^7.2.0",
     "@react-router/node": "^7.2.0",
     "@react-router/serve": "^7.2.0",
+    "@workos-inc/authkit-react-router": "^0.1.0",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
