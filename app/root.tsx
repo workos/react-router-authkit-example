@@ -8,20 +8,11 @@ import { Links, Link, Meta, Outlet, Scripts, ScrollRestoration, useRouteLoaderDa
 import Footer from './components/footer';
 import SignInButton from './components/sign-in-button';
 
-import { getSignInUrl, signOut, authkitLoader } from '@workos-inc/authkit-react-router';
+import { signOut, authkitLoader } from '@workos-inc/authkit-react-router';
 
 export const links: LinksFunction = () => [];
 
-export const loader = (args: LoaderFunctionArgs) =>
-  authkitLoader(
-    args,
-    async () => {
-      return {
-        signInUrl: await getSignInUrl(),
-      };
-    },
-    { debug: true },
-  );
+export const loader = (args: LoaderFunctionArgs) => authkitLoader(args, { debug: true });
 
 export function useRootLoaderData() {
   return useRouteLoaderData<typeof loader>('root');
