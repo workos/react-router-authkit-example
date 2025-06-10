@@ -19,7 +19,7 @@ Rename the `.env.example` file to `.env` and supply your Client ID and API key a
 ```sh
 WORKOS_CLIENT_ID=client_... # retrieved from the WorkOS dashboard
 WORKOS_API_KEY=sk_test_... # retrieved from the WorkOS dashboard
-WORKOS_REDIRECT_URI=http://localhost:3000/callback # configured in the WorkOS dashboard
+WORKOS_REDIRECT_URI=http://localhost:5173/callback # configured in the WorkOS dashboard
 WORKOS_COOKIE_PASSWORD=<your password> # generate a secure password here
 ```
 
@@ -35,7 +35,7 @@ Install the dependencies
 npm install
 ```
 
-Run the following command and navigate to [http://localhost:3000](http://localhost:3000).
+Run the following command and navigate to [http://localhost:5173](http://localhost:5173).
 
 ```bash
 npm run dev
