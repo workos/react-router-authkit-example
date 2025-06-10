@@ -1,11 +1,11 @@
-import type { ActionFunctionArgs, MetaFunction } from 'react-router';
 import { Button, Flex, Heading, Text } from '@radix-ui/themes';
 import { Link } from 'react-router';
 import SignInButton from '~/components/sign-in-button';
 import { useRootLoaderData } from '~/root';
 import { signOut } from '@workos-inc/authkit-react-router';
+import type { Route } from './+types/_index';
 
-export const meta: MetaFunction = () => {
+export const meta: Route.MetaFunction = () => {
   return [
     { title: 'Example AuthKit Authenticated App' },
     {
@@ -15,7 +15,7 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export async function action({ request }: ActionFunctionArgs) {
+export async function action({ request }: Route.ActionArgs) {
   // Called when the form in SignInButton is submitted
   return await signOut(request);
 }

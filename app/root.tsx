@@ -1,24 +1,23 @@
 // Import the base CSS styles for the radix-ui components.
 import '@radix-ui/themes/styles.css';
 import { Theme, Card, Container, Flex, Button, Box } from '@radix-ui/themes';
-
-import type { ActionFunctionArgs, LinksFunction, LoaderFunctionArgs } from 'react-router';
 import { Links, Link, Meta, Outlet, Scripts, ScrollRestoration, useRouteLoaderData } from 'react-router';
 
 import Footer from './components/footer';
 import SignInButton from './components/sign-in-button';
 
 import { signOut, authkitLoader } from '@workos-inc/authkit-react-router';
+import type { Route } from './+types/root';
 
-export const links: LinksFunction = () => [];
+export const links: Route.LinksFunction = () => [];
 
-export const loader = (args: LoaderFunctionArgs) => authkitLoader(args, { debug: true });
+export const loader = (args: Route.LoaderArgs) => authkitLoader(args, { debug: true });
 
 export function useRootLoaderData() {
   return useRouteLoaderData<typeof loader>('root');
 }
 
-export async function action({ request }: ActionFunctionArgs) {
+export async function action({ request }: Route.ActionArgs) {
   // Called when the form in SignInButton is submitted
   return await signOut(request);
 }
