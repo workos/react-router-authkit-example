@@ -1,0 +1,9 @@
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+node_modules
+/.cache
+/build
+/public/build
+.react-router/

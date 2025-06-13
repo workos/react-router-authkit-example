@@ -2,9 +2,9 @@ import { Text, Heading, TextField, Flex, Box } from '@radix-ui/themes';
 
 import { useLoaderData } from 'react-router';
 import { authkitLoader } from '@workos-inc/authkit-react-router';
-import type { LoaderFunctionArgs } from 'react-router';
+import type { Route } from './+types/account';
 
-export const loader = (args: LoaderFunctionArgs) => authkitLoader(args, { ensureSignedIn: true });
+export const loader = (args: Route.LoaderArgs) => authkitLoader(args, { ensureSignedIn: true });
 
 export default function AccountPage() {
   const { user, role } = useLoaderData<typeof loader>();

@@ -5,3 +5,4 @@ node_modules
 /public/build
 .env
 .react-router/
+.DS_Store
